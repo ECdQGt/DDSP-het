@@ -2,10 +2,10 @@
 Instance data for DDSP-het, used in the working paper "Point-to-point and milk run delivery scheduling: models, complexity results, and algorithms based on Benders decomposition" by Simon Emde, Shohre Zehtabian, and Yann Disser
 
 ## Description of the file format
-All instances are in one text file containing comma-separated values (CSV). The file contains two tables, where individual columns are separated by semicolons (";").
+The instance data are spread over two text files containing comma-separated values (CSV). The first file ('DDSP-het_trip_data.csv') contains the basic instance data like number of trips etc. as well as information about the individual trips. The second file ('DDSP-het_milk_run_data.csv') contains details about which trips can be combined into milk runs. A complete instance can only be reconstructed by reading both files. The files contain a table each, where individual columns are separated by semicolons (";").
 
 ### TRIP DATA
-The first table, entitled "TRIP DATA", contains the following information about each instance:
+The first table contains the following information about each instance:
 - Column IDENTIFIER contains the name string identifying the instance, corresponding to the instance names in the result tables of the paper.
 - Column NUMBER_OF_TRIPS contains the number n of trips.
 - Column NUMBER_OF_CLASSES contains the number |C| of different truck classes.
@@ -16,7 +16,7 @@ The first table, entitled "TRIP DATA", contains the following information about 
 - Column GAMMA denotes number of trucks available for each class, separated by dashes ("-").
 
 ### MILK RUNS
-The second table, entitled "MILK RUNS", lists the information about possible trip combinations into milk runs. It contains the following fields:
+The second table lists the information about possible trip combinations into milk runs. It contains the following fields:
 - IDENTIFIER refers back to the instance for which the milk run is defined. The name string is equivalent to one of the identifiers in the "TRIP DATA" table.
 - PROCESSING_TIMES contains the processing time of the milk run for each truck class, separated by dashes ("-").
 - TRIPS lists the set of trips contained in this milk run, where the individual trip numbers are separated by a vertical bar ("|").
